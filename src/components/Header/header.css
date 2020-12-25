@@ -1,0 +1,27 @@
+/* Every header element that uses main-header id 
+ */
+header#main-header{
+    background-color: #272727;
+    height: 72px;
+}
+
+/* Every elements that uses className .header-content and is
+ * descendants of the header element that uses main-header id.
+ */
+header#main-header .header-content{
+    width: 100%;
+    max-width: 930px;
+    height: 72px;
+    margin: 0 auto; /* bottom-up: 0, left-right: auto */
+    padding: 0 30px; /* bottom-up: 0, left-right: 30 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header#main-header .header-content a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 23px;
+}
+

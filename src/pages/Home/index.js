@@ -1,9 +1,49 @@
 import React, { Component } from 'react';
+import './home.css';
+import firebase from './../../firebase'; //firebase instace created by me.
 
 class Home extends Component{
+
+    state = {
+        posts: []
+    }
+
+    componentDidMount(){
+        firebase.database.ref("posts").on("value", snapshot =>{
+            let state = this.state;
+            snapshot.val().map(child => {
+                state.posts.push({
+                    chave: child.key,
+                    titulo: child.titulo,
+                    imagem: child.imagem,
+                    descricao: child.descricao,
+                    autor: child.autor
+                });
+            });
+            this.setState(state);
+        });
+    }
+
     render(){
         return(
-            <h1>Home page</h1>
+            <main id="posts">
+                {this.state.posts.map(post => {
+                    return(
+                        <article key={post.key}>
+                            <header>
+                                <div className="tittle">
+                                    <strong>{post.titulo}</strong>
+                                    <span>Autor: {post.autor}</span>
+                                </div>
+                            </header>
+                            <img src={post.imagem} alt="Capa do post"/>
+                            <footer>
+                                <p>{post.descricao}</p>
+                            </footer>
+                        </article>
+                    );
+                })}
+            </main>
         );
     }
 }
