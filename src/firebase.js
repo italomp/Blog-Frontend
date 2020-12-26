@@ -39,8 +39,9 @@ class Firebase{
         })
     }
 
-    getDatabase(){
-        return this.firebase.database();
+    getCurrentUser(){
+        let auth = firebase.auth();
+        return auth.currentUser ? auth.currentUser.email : null;
     }
 }
 
