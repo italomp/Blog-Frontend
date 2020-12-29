@@ -22,6 +22,10 @@ class Firebase{
         return firebase.auth().signInWithEmailAndPassword(email, password);
     }
 
+    logout(){
+        return firebase.auth().signOut();
+    }
+
     async register(nome, email, password){
         //registering user into Autentication and geting uid user.
         await firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -44,6 +48,21 @@ class Firebase{
         /*exp1 && exp2 retorna exp1 se exp1 for false ou falsy, ou exp2 caso contrário*/
         return auth.currentUser && auth.currentUser.email;
     }
+
+    async getTheNameOfTheCurrentUser(){
+        let userName, uid;
+        let auth = firebase.auth();
+        let database = firebase.database();
+        if(!auth.currentUser){
+            return null;
+        }
+        uid = auth.currentUser.uid;
+        await database.ref("usuarios").child(uid).once("value", snapshot => {
+            userName = snapshot.val().nome;
+        });
+        return userName;
+    }
+
 }
 
 //exporting a new firebase instance

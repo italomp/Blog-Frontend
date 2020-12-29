@@ -1,0 +1,32 @@
+div#dashboard{
+    max-width: 930px;
+    margin: 20px auto;
+    padding: 0 30px;
+}
+
+div#dashboard .user-info{
+    display: flex;
+    align-items: center;
+}
+
+div#dashboard .user-info a{
+    margin: 0px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
+div#dashboard button{
+    height: 30px;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    background-color: #272727;
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
