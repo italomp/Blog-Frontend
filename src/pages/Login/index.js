@@ -26,15 +26,16 @@ class Login extends Component{
     }
 
     componentDidMount(){    
-        if(firebase.getCurrentUser){
+        if(firebase.getCurrentUser()){
             this.props.history.replace("/dashboard");
         }
     }
 
-    login(event){
+    async login(event){
+        event.preventDefault();
         const { email, password } = this.state;
         try{
-            firebase.login(email, password)
+            await firebase.login(email, password)
             .catch(error => {
                 if(error.code === "auth/user-not-found"){
                     alert("Este usuário não existe!");
@@ -42,13 +43,12 @@ class Login extends Component{
                 else{
                     alert("Código de erro: " + error.code);
                 }
+                return null; //It's for the replace method don't be executed
             });
-            //tenho acesso a history por causa de withRouter.
             this.props.history.replace("/dashboard");
         }catch(error){
             alert(error.message);
         }
-        event.preventDefault();
     }
 
     render(){

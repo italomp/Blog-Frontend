@@ -1,0 +1,36 @@
+/* Each descendant element of div, which uses className register-h1 */
+div .register-h1{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #272727;
+}
+
+form#register{
+    display: flex;
+    flex-direction: column;
+    max-width: 680px;
+    margin: 0px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+form#register input{
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 0px 20px;
+    border: 1px solid #ddd;
+}
+
+form#register button{
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background-color: #272727;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}

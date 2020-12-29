@@ -25,10 +25,10 @@ class Firebase{
     async register(nome, email, password){
         //registering user into Autentication and geting uid user.
         await firebase.auth().createUserWithEmailAndPassword(email, password);
-        let uid = firebase.auth().currentUser.uid;
+        const uid = firebase.auth().currentUser.uid;
 
         //registering user into database
-        firebase.database().ref("usuarios").child(uid).set({
+        return firebase.database().ref("usuarios").child(uid).set({
             nome: nome,
         });        
     }
@@ -41,7 +41,8 @@ class Firebase{
 
     getCurrentUser(){
         let auth = firebase.auth();
-        return auth.currentUser ? auth.currentUser.email : null;
+        /*exp1 && exp2 retorna exp1 se exp1 for false ou falsy, ou exp2 caso contrário*/
+        return auth.currentUser && auth.currentUser.email;
     }
 }
 

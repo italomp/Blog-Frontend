@@ -4,6 +4,7 @@ import './style.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Register from './pages/Register';
 import Header from './components/Header';
 import firebase from './firebase';
 
@@ -30,7 +31,8 @@ class App extends Component{
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/dashboard" component={Dashboard}/>
+                        <Route exact path="/dashboard" component={Dashboard} />
+                        <Route exact path="/register" component={Register} />
                     </Switch>
                 </BrowserRouter>
             </div>
