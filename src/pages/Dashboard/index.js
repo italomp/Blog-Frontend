@@ -16,7 +16,7 @@ class Dashboard extends Component{
     }
 
     async componentDidMount(){
-        if(!firebase.getCurrentUser){
+        if(firebase.getCurrentUser() == null){
             this.props.history.replace("/login");
             return null;
         }

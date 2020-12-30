@@ -11,15 +11,16 @@ class Home extends Component{
     componentDidMount(){
         firebase.database.ref("posts").on("value", snapshot =>{
             let state = this.state;
-            snapshot.val().map(child => {
+            snapshot.forEach(child => {
                 state.posts.push({
-                    chave: child.key,
-                    titulo: child.titulo,
-                    imagem: child.imagem,
-                    descricao: child.descricao,
-                    autor: child.autor
+                    chave: child.val().key,
+                    titulo: child.val().titulo,
+                    imagem: child.val().imagem,
+                    descricao: child.val().descricao,
+                    autor: child.val().autor
                 });
             });
+            state.posts.reverse();
             this.setState(state);
         });
     }

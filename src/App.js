@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Register from './pages/Register';
+import NewPost from './pages/NewPost';
 import Header from './components/Header';
 import firebase from './firebase';
 
@@ -32,6 +33,7 @@ class App extends Component{
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/dashboard" component={Dashboard} />
+                        <Route exact path="/dashboard/new" component={NewPost} />
                         <Route exact path="/register" component={Register} />
                     </Switch>
                 </BrowserRouter>

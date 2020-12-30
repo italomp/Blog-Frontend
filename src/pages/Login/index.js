@@ -36,6 +36,9 @@ class Login extends Component{
         const { email, password } = this.state;
         try{
             await firebase.login(email, password)
+            .then(
+                this.props.history.replace("/dashboard")
+            )
             .catch(error => {
                 if(error.code === "auth/user-not-found"){
                     alert("Este usuário não existe!");
@@ -45,7 +48,6 @@ class Login extends Component{
                 }
                 return null; //It's for the replace method don't be executed
             });
-            this.props.history.replace("/dashboard");
         }catch(error){
             alert(error.message);
         }
