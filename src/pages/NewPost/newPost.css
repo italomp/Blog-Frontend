@@ -24,12 +24,16 @@ form#new-post-form{
     border-radius: 5px;
 }
 
-form#new-post-form input{
+form#new-post-form input[type="text"]{
     margin: 10px 0px;
     height: 40px;
     border-radius: 5px;
     border: 1px solid #ddd;
     padding: 0 20px;
+}
+
+form#new-post-form input[type="file"]{
+    margin: 10px 0px 0px;
 }
 
 form#new-post-form textarea{
@@ -56,5 +60,9 @@ form#new-post-form span{
     font-size: 18px;
     font-weight: bold;
     text-align: center;
+}
 
+form#new-post-form img{
+    max-width: 250px;
+    margin: 20px 0px;
 }

@@ -23,6 +23,10 @@ main#posts article header .tittle{
     flex-direction: column;
 }
 
+main#posts article header .tittle strong{
+    font-size: 20px;
+}
+
 main#posts article header span{
     font-size: 13px;
     padding-top: 5px;

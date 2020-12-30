@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import firebase from './../../firebase';
 import "./register.css";
 
@@ -9,7 +9,6 @@ import "./register.css";
  * 
  * Dependences:
  * Component - It's used so that Login can access state object.
- * Link - It's used to redirect the user to another route.
  * withRouter - It's used so that Login can access history object.
  * The history object provides implementations for handling the session
  * stack.
