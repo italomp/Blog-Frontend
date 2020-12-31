@@ -1,31 +1,30 @@
-/* Every header element that uses main-header id 
- */
 header#main-header{
     background-color: #272727;
     height: 72px;
 }
 
-/* Every elements that uses className .header-content and is
- * descendants of the header element that uses main-header id.
- */
 header#main-header .header-content{
     width: 100%;
     max-width: 930px;
     height: 72px;
-    margin: 0 auto; /* bottom-up: 0, left-right: auto (RESPONSIVE) */
-    padding: 0 30px; /* bottom-up: 0, left-right: 30 */
+    margin: 0 auto;
+    padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0px auto;
 }
 
 header#main-header .header-content a{
     color: #ffffff;
     text-decoration: none;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 header#main-header .header-content a[name="enter"]:hover{
-    color: #e6e6e6;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #404040;
 }
 
