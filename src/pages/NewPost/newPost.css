@@ -14,6 +14,10 @@ header#new-post-header a{
     padding: 8px 18px 8px;
 }
 
+header#new-post-header a:hover{
+    background-color: #404040;
+}
+
 form#new-post-form{
     display: flex;
     flex-direction: column;
@@ -53,6 +57,10 @@ form#new-post-form button{
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
+}
+
+form#new-post-form button:hover{
+    background-color: #404040;
 }
 
 form#new-post-form img{

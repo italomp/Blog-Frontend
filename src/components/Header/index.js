@@ -8,7 +8,7 @@ function Header(){
                 <Link to="/">
                     Blog Programador
                 </Link>
-                <Link to="/login">
+                <Link to="/login" name="enter">
                     Entrar
                 </Link>
             </div>

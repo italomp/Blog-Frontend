@@ -25,3 +25,7 @@ header#main-header .header-content a{
     font-size: 23px;
 }
 
+header#main-header .header-content a[name="enter"]:hover{
+    color: #e6e6e6;
+}
+

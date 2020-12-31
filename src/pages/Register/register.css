@@ -35,3 +35,7 @@ form#register button{
     font-size: 16px;
     font-weight: bold;
 }
+
+form#register button:hover{
+    background-color: #404040;
+}
