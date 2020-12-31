@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './home.css';
 import firebase from './../../firebase'; //firebase instace created by me.
 
 class Home extends Component{
 
-    state = {
-        posts: []
+    constructor(props){
+        super(props);
+        this.state = {
+            posts: []
+        }
+        this.fillPostDescription = this.fillPostDescription.bind(this);
     }
 
     componentDidMount(){
@@ -13,16 +18,29 @@ class Home extends Component{
             let state = this.state;
             snapshot.forEach(child => {
                 state.posts.push({
-                    chave: child.val().key,
-                    titulo: child.val().titulo,
-                    imagem: child.val().imagem,
-                    descricao: child.val().descricao,
-                    autor: child.val().autor
+                    key: child.key,
+                    tittle: child.val().titulo,
+                    image: child.val().imagem,
+                    description: child.val().descricao,
+                    author: child.val().autor
                 });
             });
-            state.posts.reverse();
+            this.state.posts.reverse();
             this.setState(state);
         });
+    }
+
+    fillPostDescription(str){
+        let strArray = str.split("");
+        let description = "";
+        let count = 0;
+        strArray.forEach(caracter => {
+            if(count <= 500){
+                description += caracter;
+                count ++;
+            }
+        });
+        return description + "...";
     }
 
     render(){
@@ -33,13 +51,16 @@ class Home extends Component{
                         <article key={post.key}>
                             <header>
                                 <div className="tittle">
-                                    <strong>{post.titulo}</strong>
-                                    <span>Autor: {post.autor}</span>
+                                    <strong>{post.tittle}</strong>
+                                    <span>Autor: {post.author}</span>
                                 </div>
                             </header>
-                            <img src={post.imagem} alt="Capa do post"/>
+                            <img src={post.image} alt="Capa do post"/>
                             <footer>
-                                <p>{post.descricao}</p>
+                                <p>
+                                    {this.fillPostDescription(post.description)}
+                                    <Link to={`/post/:${post.key}`} post={post}>ver post completo</Link>
+                                </p>
                             </footer>
                         </article>
                     );

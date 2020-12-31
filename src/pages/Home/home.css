@@ -41,3 +41,9 @@ main#posts article > footer{
     padding: 20px;
     word-wrap: break-word; /* permite que palavras sejam quebradas */
 }
+
+main#posts article > footer a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
