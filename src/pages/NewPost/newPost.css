@@ -55,14 +55,8 @@ form#new-post-form button{
     font-weight: bold;
 }
 
-form#new-post-form span{
-    color: red;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-}
-
 form#new-post-form img{
     max-width: 250px;
     margin: 20px 0px;
 }
+

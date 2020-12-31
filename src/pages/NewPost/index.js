@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './newPost.css';
 import firebase from './../../firebase';
+import ErrorMessageForm from './../../components/ErrorMssageForm';
 
 class NewPost extends Component{
     constructor(props){
@@ -103,7 +104,8 @@ class NewPost extends Component{
                     <Link to="/dashboard"> Voltar</Link>
                 </header>
                 <form onSubmit={this.register} id="new-post-form">
-                    <span>{this.state.alert}</span>
+                    {this.state.alert && <ErrorMessageForm msg={this.state.alert}/>}
+
                     <label>Título: </label>
                     <input type="text" placeholder="Título do Post" autoFocus
                      onChange={event => this.setState({tittle: event.target.value})}/>
@@ -115,7 +117,7 @@ class NewPost extends Component{
                     <label>Selecione uma Capa: </label>
                     <input type="file" onChange={this.handleFile}/>
                     {this.state.imageUrl !== "" ? 
-                     <img src={this.state.imageUrl} width="250" alt="Capa do Post"/>
+                     <img src={this.state.imageUrl} alt="Capa do Post"/>
                      :
                      <progress value={this.state.progress} max="100"/>
                      }

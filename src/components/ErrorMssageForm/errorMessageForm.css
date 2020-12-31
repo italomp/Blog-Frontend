@@ -1,0 +1,14 @@
+div#error-message-form{
+    width: 100%;
+    margin: 10px auto;
+}
+
+div#error-message-form h3{
+     background-color: #ff3333;
+     color: white;
+     text-align: center;
+     font-weight: normal;
+     padding: 8px 20px;
+     border-radius: 5px;
+}
+
