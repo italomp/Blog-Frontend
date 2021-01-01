@@ -10,6 +10,7 @@ main#posts article{
     border: 1px solid #ddd;
     margin-top: 30px;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 main#posts article header{
