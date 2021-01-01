@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# About the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a blog, in which the user can see thumbnail posts on the home page or full posts on a dynamic page. <br>
+We can register a new user, log in, register a new post with tittle, description and a jpg or png image for the cover of the post.
 
-## Available Scripts
+## Layout
 
-In the project directory, you can run:
+### 1 - Home Page
+<img src="https://github.com/italomp/assets/blob/master/1%20-%20blog%20programador%20(projeto%20react)/1%20-%20homepage.PNG" height="600"> <br>
+
+You can show posts, click to see the full posts (It will take you to a dynamic page), <br> 
+or to click 'entrar' button (It will take you to login page)
+
+### 2 - Dynamic page, which show the full post
+<img src="https://github.com/italomp/assets/blob/master/1%20-%20blog%20programador%20(projeto%20react)/2%20-%20post%20completo.PNG" height="600"> <br>
+You can see the full post
+
+### 3 - Register new User
+<img src="https://github.com/italomp/assets/blob/master/1%20-%20blog%20programador%20(projeto%20react)/4%20-%20registrar%20novo%20usu%C3%A1rio.PNG" height="600"> <br>
+You can register a new user
+
+### 4 - Login Page
+<img src="https://github.com/italomp/assets/blob/master/1%20-%20blog%20programador%20(projeto%20react)/3%20-%20login.PNG" height="600"> <br>
+You can log in or click 'Ainda não possui uma conta?' to create a new account.
+
+### 5 - Dashboard
+<img src="https://github.com/italomp/assets/blob/master/1%20-%20blog%20programador%20(projeto%20react)/5%20-%20dashboard.PNG" height="600"> <br>
+The dashboard show the name and  the email of the logged in user. <br>
+On the dashboard you can also click "deslogar" to log out and click "Novo Post" to create a new post.
+
+### 6 - Create New Post
+<img src="https://github.com/italomp/assets/blob/master/1%20-%20blog%20programador%20(projeto%20react)/7%20-%20registrar%20novo%20post%20(tendo%20selecionado%20uma%20foto).PNG" height="600"> <br>
+You can fill the form to create a new post. <br>
+When you selected a image to the cover, you will can show a thumbnail of it.
+
+## How to run this project
+You need to download this project (with git clone or git pull) and in the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You will also see any lint errors in the console. <br>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+Italo Modesto Pereira <br>
+LinkedIn: <https://www.linkedin.com/in/italo-modesto-aa7749120/>
