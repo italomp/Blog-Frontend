@@ -4,16 +4,7 @@ import firebase from './../../firebase';
 import './login.css';
 
 /**
- * This component is responsible for login feature
- * 
- * Dependences:
- * Component - It's used so that Login can access state object.
- * Link - It's used to redirect the user to another route.
- * withRouter - It's used so that Login can access history object.
- * The history object provides implementations for handling the session
- * stack.
- * The session stack storage routes/pages that the user browses.
- * firebase - It's provide access to datase and authetication features.
+ * This component represents the login page.
  */
 class Login extends Component{
     constructor(props){
@@ -26,12 +17,21 @@ class Login extends Component{
         this.login = this.login.bind(this);
     }
 
+    /**
+     * This method check whether there is user logged in.
+     * This method execete when this component is assembled.
+     */
     componentDidMount(){    
         if(firebase.getCurrentUser()){
             this.props.history.replace("/dashboard");
         }
     }
 
+    /**
+     * This method logs the user on and handle errors.
+     * 
+     * @param event is the event added in html element. 
+     */
     async login(event){
         event.preventDefault();
         const { email, password } = this.state;
@@ -47,13 +47,16 @@ class Login extends Component{
                 else{
                     alert("Código de erro: " + error.code);
                 }
-                return null; //It's for the replace method don't be executed
+                return null;
             });
         }catch(error){
             alert(error.message);
         }
     }
 
+    /**
+     * This method is responsible for rendering elements on the screen.
+     */
     render(){
         return(
             <div>
@@ -74,5 +77,4 @@ class Login extends Component{
     }
 }
 
-//exportando assim teremos acesso ao histórico
 export default withRouter(Login);

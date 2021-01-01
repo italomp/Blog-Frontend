@@ -2,6 +2,11 @@ import { Component } from 'react';
 import firebase from './../../firebase';
 import './../Home/home.css';
 
+/**
+ * This component represents the full post.
+ * When the user click in "see more" in the thumbnail post,
+ * on home page, he will see this full post component.
+ */
 class FullPost extends Component{
 
     constructor(props){
@@ -11,16 +16,24 @@ class FullPost extends Component{
             tittle: "",
             author: "",
             image: "",
-            description: ""
+            description: "",
 
         }
         this.loadPost = this.loadPost.bind(this);
     }
 
+    /**
+     * This method execete the loadPost method, when this 
+     * component is assembled.
+     */
     async componentDidMount(){
         this.loadPost();
     }
 
+    /**
+     * This method takes a post from the database and saves 
+     * it in this component state.
+     */
     async loadPost(){
         let { id } = await this.props.match.params;
         id = id.substring(1); //id without :
@@ -36,6 +49,9 @@ class FullPost extends Component{
         });
     }
 
+    /**
+     * This method is responsible for rendering elements on the screen.
+     */
     render(){
         return(
             <main id="posts">

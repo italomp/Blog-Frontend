@@ -4,6 +4,9 @@ import './newPost.css';
 import firebase from './../../firebase';
 import ErrorMessageForm from './../../components/ErrorMssageForm';
 
+/**
+ * This component represents the page that register a new post.
+ */
 class NewPost extends Component{
     constructor(props){
         super(props);
@@ -19,6 +22,12 @@ class NewPost extends Component{
         this.sendPostCover = this.sendPostCover.bind(this);
     }
 
+    /**
+     * This method check whether there is user logged on.
+     * If there isn't user logged on, the user will be redirected
+     * to the home page.
+     * This method execete when this component is assembled.
+     */
     componentDidMount(){
         if(firebase.getCurrentUser() == null){
             this.props.history.replace("/");
@@ -26,6 +35,10 @@ class NewPost extends Component{
         }
     }
 
+    /**
+     * This method saves a new post in database.
+     * @param event is the event added to html element. 
+     */
     async register(event){
         let newPostTittle = this.state.tittle;
         let newPostImageUrl = this.state.imageUrl;
@@ -48,9 +61,8 @@ class NewPost extends Component{
     }
 
     /**
-     * This method is asynchronous because it uses sendPostCover method.
-     * 
-     * @param event  
+     * This method handles the image sent for the cover post.
+     * @param event is the event added to html element. 
      */
     async handleFile(event){
         if(event.target.files[0]){
@@ -65,6 +77,10 @@ class NewPost extends Component{
         }
     }
 
+    /**
+     * This method sends the cover post to firebase storage.
+     * @param {*} image 
+     */
     async sendPostCover(image){
         const currentUid = firebase.getCurrentUserUid();
         const uploadTask = firebase.storage
@@ -97,6 +113,9 @@ class NewPost extends Component{
         });
     }
 
+    /**
+     * This method is responsible for rendering elements on the screen.
+     */
     render(){
         return(
             <div id="new-post">

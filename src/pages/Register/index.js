@@ -5,15 +5,7 @@ import "./register.css";
 
 
 /**
- * This component is responsible for register users.
- * 
- * Dependences:
- * Component - It's used so that Login can access state object.
- * withRouter - It's used so that Login can access history object.
- * The history object provides implementations for handling the session
- * stack.
- * The session stack storage routes/pages that the user browses.
- * firebase - It's provide access to datase and authetication features.
+ * This component represents the user registration page.
  */
 class Register extends Component{
     constructor(props){
@@ -26,6 +18,9 @@ class Register extends Component{
         this.register = this.register.bind(this);
     }   
 
+    /**
+     * This method registers a nwr user and handle sending erros.
+     */
     async register(event){
         event.preventDefault();
         try{
@@ -38,6 +33,9 @@ class Register extends Component{
 
     }
 
+    /**
+     * This method is responsible for rendering elements on the screen.
+     */
     render(){
         return(
             <div>
@@ -62,5 +60,4 @@ class Register extends Component{
     }
 }
 
-//exportando assim teremos acesso ao histórico
 export default withRouter(Register);

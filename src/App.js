@@ -11,7 +11,10 @@ import Header from './components/Header';
 import firebase from './firebase';
 
 /**
- * 
+ * This is the main component of the application.
+ * It's responsible for mananging routes, checks whether
+ * the firebase was initialized and the components
+ * that will appear on the sreen.
  */
 class App extends Component{ 
 
@@ -19,12 +22,19 @@ class App extends Component{
         firebaseInitialized: false
     }
 
+    /**
+     * This method checks whether the firebase was initialized.
+     * This method is executed when this component is assembled.
+     */
     componentDidMount(){
         firebase.isInitialized().then(result => {
             this.setState({firebaseInitialized: result});
         });
     }
 
+    /**
+     * This method renders the components on the screen
+     */
     render(){
         return this.state.firebaseInitialized !== false ? (
             <div>

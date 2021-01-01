@@ -3,6 +3,10 @@ import { Link, withRouter } from 'react-router-dom';
 import firebase from './../../firebase';
 import './dashboard.css';
 
+/**
+ * This component represents the dashboard page, which
+ * the user can see after logging in the blog.
+ */
 class Dashboard extends Component{
 
     constructor(props){
@@ -15,6 +19,13 @@ class Dashboard extends Component{
         this.updateUserDatasIntoLocalStorage = this.updateUserDatasIntoLocalStorage.bind(this);
     }
 
+    /**
+     * This method checks whether the user is logged in.
+     * If he doesn't logged in, he will be redirected to the login page.
+     * If the user is logged in, he username and email will savers in the
+     * localStorage to be accessed more fast.
+     * This method is executed when this component is assembled.
+     */
     async componentDidMount(){
         if(firebase.getCurrentUser() == null){
             this.props.history.replace("/login");
@@ -23,6 +34,10 @@ class Dashboard extends Component{
         this.updateUserDatasIntoLocalStorage();
     }
 
+    /**
+     * This method is responsible for save tha username and the user email
+     * in localStorage.
+     */
     async updateUserDatasIntoLocalStorage(){
         localStorage.userEmail = firebase.getCurrentUser();
         localStorage.userName = await firebase.getTheNameOfTheCurrentUser();
@@ -32,6 +47,9 @@ class Dashboard extends Component{
         });
     }
 
+    /**
+     * This mehtos is responsible for user logout.
+     */
     async logout(){
         await firebase.logout()
         .catch(error => {
@@ -42,6 +60,9 @@ class Dashboard extends Component{
         this.props.history.push("/");
     }
 
+    /**
+     * This method is responsible for rendering elements on the screen.
+     */
     render(){
         return(
             <div id="dashboard">
@@ -57,5 +78,5 @@ class Dashboard extends Component{
     }
 }
 
-//exporting with withRouter to can access the history object
+//exporting with withRouter to can access the history object.
 export default withRouter(Dashboard);
