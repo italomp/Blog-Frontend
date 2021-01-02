@@ -23,9 +23,9 @@ class Home extends Component{
      */
     componentDidMount(){
         firebase.database.ref("posts").on("value", snapshot =>{
-            let state = this.state;
+            let posts = [];
             snapshot.forEach(child => {
-                state.posts.push({
+                posts.push({
                     key: child.key,
                     tittle: child.val().titulo,
                     image: child.val().imagem,
@@ -33,8 +33,8 @@ class Home extends Component{
                     author: child.val().autor
                 });
             });
-            this.state.posts.reverse();
-            this.setState(state);
+            posts.reverse();
+            this.setState({posts});
         });
     }
 
