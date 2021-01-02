@@ -45,7 +45,7 @@ You will also see any lint errors in the console. <br>
 
 
 ## Technologies
-React in front-end adn Firebase in back-end. <br>
+React on the front-end adn Firebase on the back-end. <br>
 
 ## Author
 Italo Modesto Pereira <br>
